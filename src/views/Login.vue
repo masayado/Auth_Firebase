@@ -25,9 +25,12 @@ export default {
     // computed: {},
     methods: {
         login:function(){
-        firebase.Auth().signInWithEmailAndPassword(this.user, this.password)
-        .then(()=>{
-            this.$router.push('/')
+        console.log(firebase.auth)
+        console.log(firebase.default.auth)
+        firebase.auth().signInWithEmailAndPassword(this.user, this.password)
+        .then((resp)=>{
+            console.log(resp,'result')
+            this.$router.push('/home')
         })
         .catch(function(error){
             let errorCode = error.code;

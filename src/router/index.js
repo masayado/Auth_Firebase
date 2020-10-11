@@ -7,9 +7,25 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path:'*',
+    redirect: '/login',
+  },
+  {
     path: '/',
+    redirect: '/login',
+  },
+  {
+    path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta:{
+      authenticated:true,
+    },
+  },
+  {
+    path:'/login',
+    name: 'Login',
+    component: Login,
   },
   {
     path: '/about',
@@ -19,11 +35,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  {
-    path:'/login',
-    name: 'Login',
-    component: Login,
-  },
 ]
 
 const router = new VueRouter({
@@ -31,5 +42,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+//implementando guardias: guards
+//router.beforeEach((to, from, next))
 export default router
