@@ -25,7 +25,15 @@ export default {
     // computed: {},
     methods: {
         login:function(){
-        
+        firebase.Auth().signInWithEmailAndPassword(this.user, this.password)
+        .then(()=>{
+            this.$router.push('/')
+        })
+        .catch(function(error){
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        })
         },
     },
     //components: {},
