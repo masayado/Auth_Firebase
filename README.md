@@ -1,5 +1,11 @@
 # desafio_auth_login
 
+## Credenciales
+```
+usuario: user@micorreo.cl
+contraseña:123456
+```
+
 ## Project setup
 ```
 npm install
