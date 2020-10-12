@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import BootstrapVue from "bootstrap-vue"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
 import firebase from 'firebase'
 
 Vue.config.productionTip = false
@@ -16,6 +19,8 @@ Vue.config.productionTip = false
     messagingSenderId: "489902870653",
     appId: "1:489902870653:web:1677beefee22524cf42114"
   };
+
+  Vue.use(BootstrapVue)
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
